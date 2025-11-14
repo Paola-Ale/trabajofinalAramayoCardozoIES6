@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuario</title>
+</head>
+
+<style>
+        body {
+            background: #f4f4f4;
+        }
+        .container {
+            margin-top: 30px;
+        }
+        .card {
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h2 {
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2 class="mb-4">Gestión de Usuarios</h2>
+
+    <!-- FORMULARIO ALTA DE USUARIO -->
+    <div class="card p-4 mb-4">
+        <h4>Registrar nuevo usuario</h4>
+
+        <form th:action="@{/usuarios/crear}" method="post">
+
+            <div class="row mt-3">
+                <div class="col-md-4">
+                    <label>DNI:</label>
+                    <input type="text" name="dni" class="form-control" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label>Apellido:</label>
+                    <input type="text" name="apellido" class="form-control" required>
+                </div>
+                <div class="col-md-4">
+                    <label>Nombre:</label>
+                    <input type="text" name="nombre" class="form-control" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label>Email:</label>
+                    <input type="email" name="email" class="form-control" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label>Teléfono:</label>
+                    <input type="text" name="telefono" class="form-control" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-3">Guardar Usuario</button>
+        </form>
+    </div>
+
+    <!-- TABLA DE USUARIOS -->
+    <div class="card p-4">
+        <h4>Listado de Usuarios</h4>
+
+        <table class="table table-striped mt-3">
+            <thead class="table-dark">
+            <tr>
+                <th>DNI</th>
+                <th>Apellido</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Teléfono</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="u : ${usuarios}">
+                <td th:text="${u.dni}"></td>
+                <td th:text="${u.apellido}"></td>
+                <td th:text="${u.nombre}"></td>
+                <td th:text="${u.email}"></td>
+                <td th:text="${u.telefono}"></td>
+
+                <td>
+                    <a th:href="@{'/usuarios/' + ${u.dni}}" class="btn btn-info btn-sm">Ver</a>
+
+                    <a th:href="@{'/usuarios/eliminar/' + ${u.id}}"
+                       class="btn btn-danger btn-sm"
+                       onclick="return confirm('¿Seguro que querés eliminar este usuario?')">
+                        Eliminar
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>

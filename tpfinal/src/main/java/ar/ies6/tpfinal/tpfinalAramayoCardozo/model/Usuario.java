@@ -1,29 +1,27 @@
 package ar.ies6.tpfinal.tpfinalAramayoCardozo.model;
 
-//import java.time.LocalDate;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Usuario {
 
     private String dni;
     private String nombre;
     private String apellido;
     private String numeroDeTelefono;
-    private String direccion;
-    private String ubicacion;
+    private String email;
+    private boolean activo = true;
    
    
     public Usuario() {
     }
 
-
-    public Usuario(String dni, String nombre, String apellido, String numeroDeTelefono, String direccion,
-            String ubicacion) {
+    public Usuario(String dni, String nombre, String apellido, String numeroDeTelefono, String email) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
         this.numeroDeTelefono = numeroDeTelefono;
-        this.direccion = direccion;
-        this.ubicacion = ubicacion;
+        this.email = email;
     }
 
 
@@ -67,24 +65,27 @@ public class Usuario {
     }
 
 
-    public String getDireccion() {
-        return direccion;
+    public String getEmail() {
+        return email;
     }
 
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
 
-    public String getUbicacion() {
-        return ubicacion;
+
+    public boolean isActivo() {
+        return activo;
     }
 
 
-    public void setUbicacion(String ubicacion) {
-        this.ubicacion = ubicacion;
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
+
+    
 
     
     
