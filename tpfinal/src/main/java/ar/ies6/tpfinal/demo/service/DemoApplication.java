@@ -1,5 +1,4 @@
-package ar.ies6.tpfinal.demo;
-
+package ar.ies6.tpfinal.demo.service;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
