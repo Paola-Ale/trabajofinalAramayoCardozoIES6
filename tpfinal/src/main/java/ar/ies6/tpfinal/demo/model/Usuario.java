@@ -1,4 +1,4 @@
-package ar.ies6.tpfinal.tpfinalAramayoCardozo.model;
+package ar.ies6.tpfinal.demo.model;
 
 import org.springframework.stereotype.Component;
 
