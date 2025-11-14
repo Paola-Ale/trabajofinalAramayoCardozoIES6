@@ -1,13 +1,12 @@
-package ar.ies6.tpfinal.tpfinalAramayoCardozo;
-
+package ar.ies6.tpfinal.demo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class demoApplication {
+public class DemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(demoApplication.class, args);
+		SpringApplication.run(DemoApplication.class, args);
 	}
 
 }
